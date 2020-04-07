@@ -2,9 +2,11 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block title %}{% endblock %} | Victor Orellana Moya </title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
 
 <body>
@@ -17,14 +19,13 @@
             Menú
             <i class="fa fa-bars"></i>
           </button>
-
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'home' %}">Portada</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'about' %}">Acerca de</a>
+                    <a class="nav-link" href="{% url 'about' %}">Acerca de mi</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'portfolio' %}">Portafolio</a>
@@ -58,11 +59,20 @@
     <div class="container">
         {% block content %}{% endblock %}
     </div>
-    
+
     {% if request.path != "/" %}<hr>{% endif %}
 
-    <!-- Pié de página -->
+    <!-- Pié de página / footer -->
     <footer>
+      <div class="container" style="font-size: medium;">
+        <br>
+        <p >
+            Aqui te dejo mis redes sociales, por si quieres puedes seguirme. codigo en el link de GitHub 
+            por si quieres intentar este tipo de web tu mismo ! 😁 .
+        </p>
+    
+      </div>
+
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
@@ -76,21 +86,25 @@
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
+                <a href="https://github.com/LitVom/Heart" target="_blank">
                   <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>
+
+              <!--
               <li class="list-inline-item">
-                <a href="#">
+                <a href="#youtube icono">
                   <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>
+              -->
+
               <li class="list-inline-item">
                 <a href="https://www.instagram.com/litvom/" target="_blank">
                   <span class="fa-stack fa-lg">
@@ -129,20 +143,3 @@
 </body>
 
 </html>
-
-
-
-<!-- CAMBIAR LAS FOTOS DE TODO !!
-
-
-  <link rel="icon" href="core/img/avatarmonkey.jpg"/> imagen pestaña de ventana.
-              <li class="list-inline-item">
-                <a href="https://www.instagram.com/lilv0m/">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-            
-            -->
